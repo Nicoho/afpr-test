@@ -8,7 +8,7 @@ function Fin() {
   return (
     <div className='Fin'>
       <div>
-        Fin du test: tu es nul
+        Fin du test
       </div>
       <Link to='/'>
         <button>Accueil</button>

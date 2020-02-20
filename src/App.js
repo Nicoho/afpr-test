@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Questionnaire from './components/Questionnnaire';
-import Fin from './components/Fin'
-import Debut from './components/Debut';
+import Questionnaire from './components/user/Questionnnaire';
+import Fin from './components/user/Fin'
+import Debut from './components/user/Debut';
 
 
 function App() {

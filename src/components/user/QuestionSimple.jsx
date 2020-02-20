@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { setCheckedPossibilities } from '../reducers/questionnaire.reducer';
+import { setCheckedPossibilities } from '../../reducers/questionnaire.reducer';
 
 function QuestionSimple({ question, ValidateResponse }) {
   const [Answers, setAnswers] = useState([])

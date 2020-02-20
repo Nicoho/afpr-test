@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { questionnaire, initialState } from '../reducers/questionnaire.reducer'
+import { questionnaire, initialState } from '../../reducers/questionnaire.reducer'
 import Question from './Question';
 import Chrono from './Chrono'
 
