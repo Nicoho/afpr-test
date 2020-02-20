@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Questionnaire from './components/user/Questionnnaire';
-import Fin from './components/user/Fin'
-import Debut from './components/user/Debut';
+import './components/user/user-style.scss';
+import Userindex from './components/user/Userindex'
 
 
 function App() {
@@ -11,15 +10,10 @@ function App() {
       <div className="App">
 
         <Switch>
-          <Route path="/test">
-            <Questionnaire />
+          <Route path="/user">
+            <Userindex />
           </Route>
-          <Route exact path='/'>
-            <Debut />
-          </Route>
-          <Route path="/end">
-            <Fin />
-          </Route>
+
         </Switch>
       </div>
     </BrowserRouter>

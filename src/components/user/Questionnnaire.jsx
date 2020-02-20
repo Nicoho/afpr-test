@@ -17,7 +17,7 @@ function Questionnaire() {
   }, [])
 
 
-  let navigateInTest = () => {
+  const navigateInTest = () => {
     if (state.indexQuestion === state.test.questions.length - 1) {
       setIsEnded(true)
     } else {
@@ -25,8 +25,9 @@ function Questionnaire() {
     }
   }
 
-  let ValidateResponse = (e, answer) => {
-    e.preventDefault()
+  const ValidateResponse = (e, answer) => {
+
+
     dispatch({ type: 'getAnswer', payload: answer })
     navigateInTest()
   }
@@ -46,7 +47,7 @@ function Questionnaire() {
         {state.test.questions && <Question key={state.indexQuestion} question={state.test.questions[state.indexQuestion]} ValidateResponse={ValidateResponse} />}
       </div>
       {
-        isEnded && <Redirect to='/end' />
+        isEnded && <Redirect to='/user/end' />
       }
     </div>
   )

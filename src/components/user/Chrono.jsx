@@ -23,11 +23,11 @@ function Chrono({ ValidateResponse, timer }) {
     savedCallback.current = callback
   })
 
-  function callback() {
+  function callback(e) {
     if (chrono > 0) {
       setChrono(chrono - 1000)
     } else {
-      ValidateResponse('', true)
+      ValidateResponse(e, '')
     }
   }
 

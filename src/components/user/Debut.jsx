@@ -8,7 +8,7 @@ function Debut() {
   return (
     <div className='Fin'>
 
-      <Link to='/test'>Commencer le test</Link>
+      <Link to='/user/test'>Commencer le test</Link>
     </div>
   )
 }

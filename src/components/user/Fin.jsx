@@ -10,7 +10,7 @@ function Fin() {
       <div>
         Fin du test
       </div>
-      <Link to='/'>
+      <Link to='/user'>
         <button>Accueil</button>
       </Link>
     </div>
