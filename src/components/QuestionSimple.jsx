@@ -22,7 +22,7 @@ function QuestionSimple({ question, ValidateResponse }) {
 
   return (
     <div className='QuestionSimple'>
-      <form onSubmit={() => ValidateResponse(getResult(Answers))}>
+      <form onSubmit={(e) => ValidateResponse(e, getResult(Answers))}>
         <div>
           {
             Answers.map((answer, ind) => {

@@ -10,7 +10,7 @@ function QuestionLibre({ question, ValidateResponse }) {
 
   return (
     <div className='QuestionLibre'>
-      <form onSubmit={() => ValidateResponse(rep)}>
+      <form onSubmit={(e) => ValidateResponse(e, rep)}>
         <input value={rep} onChange={e => getAnswer(e)} />
         <button type='submit' >valider la réponse</button>
       </form>

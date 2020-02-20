@@ -25,7 +25,8 @@ function Questionnaire() {
     }
   }
 
-  let ValidateResponse = (answer) => {
+  let ValidateResponse = (e, answer) => {
+    e.preventDefault()
     dispatch({ type: 'getAnswer', payload: answer })
     navigateInTest()
   }
