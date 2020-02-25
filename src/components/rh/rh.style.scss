@@ -45,11 +45,70 @@
     background: #f8f9fa;
     height: 100vh;
     width: 70%;
-
+    .search {
+      margin: 15px auto;
+      background-color: white;
+      input {
+        height: 50px;
+        width: 90%;
+        border: none;
+        margin-left: 5px;
+        font-size: 20px;
+        &:focus {
+          outline-style: none !important;
+        }
+      }
+    }
     .register-form {
       margin: 15% auto;
-      width: 30%;
+      width: 90%;
       text-align: center;
+
+      input {
+        padding: 5px;
+        height: 50px;
+        width: 100%;
+        border: none;
+        margin-left: 5px;
+        font-size: 20px;
+        &:focus {
+          outline-style: none !important;
+        }
+      }
+      select {
+        height: 50px;
+        width: 100%;
+        border: none;
+        margin-left: 5px;
+        font-size: 20px;
+        &:focus {
+          outline-style: none !important;
+        }
+      }
+      .btnRegister {
+        border-radius: 0 !important;
+        margin: 20px auto;
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+        padding: 2%;
+        padding: 0 20px;
+        height: 80px;
+        background: #3046ba;
+        font-size: 25px;
+        color: #f8f9fa;
+        transition: all 0.2s ease-in-out;
+        text-align: left;
+        line-height: 80px;
+        img {
+          width: 50px;
+          margin-right: 10px;
+          span {
+            display: inline-block;
+          }
+        }
+        &:hover {
+          background-color: #ce3089;
+        }
+      }
     }
     .register-Table {
       margin: 5% auto;
@@ -102,7 +161,7 @@
         }
       }
       tbody {
-        height: 80vh;
+        height: 75vh;
         display: block;
         overflow-y: auto;
         width: 100%;

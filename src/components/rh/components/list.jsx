@@ -8,9 +8,9 @@ const List = () => {
         <div className="register-right">
             <h3 className="register-heading">Liste des candidats</h3>
             <div>
-                <div className="input-group col-md-3">
+                <div className="search input-group col-md-4">
                     <img src={loupe} width="20px" alt="Loupe" />
-                    <input type="text" class="form-control" placeholder="Recherche" aria-label="Username" aria-describedby="basic-addon1" />
+                    <input type="text" placeholder="Recherche" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
                 <table className="table table-fixed table-striped table-borderless">
                     <thead>
