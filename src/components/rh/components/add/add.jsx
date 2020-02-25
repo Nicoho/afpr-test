@@ -1,4 +1,5 @@
 import React from 'react';
+import add from '../../../../img/add.svg';
 
 const Add = () => {
     return (
@@ -32,7 +33,7 @@ const Add = () => {
                         </select>
                     </div>
                     <div className="btnRegister" >
-                        <span><img alt="add" /></span>
+                        <span><img src={add} alt="add" /></span>
                         <span>Ajouter le candidat</span>
                     </div>
                 </div>
