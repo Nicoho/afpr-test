@@ -1,12 +1,11 @@
 const test_en_dur = {
   id_test: 1,
-  test_name: "test de test",
   test_level: "débutant",
   questions: [
     {
       id_question: 1,
       type: 'libre',
-      time: 5000,
+      time: 15000,
       question: 'quelle est la 1ere lettre de l\'alphabet?',
       possibilite: {
         id_possibilite: 1,
@@ -72,5 +71,14 @@ const test_en_dur = {
     }
   ]
 }
+export const infos_test = {
+  id: 1,
+  nom: 'Cailllaud',
+  prenom: 'Tom',
+  langage: 'React',
+  niveau: 'débutant',
+  duree: 3000000
+}
+
 
 export default test_en_dur

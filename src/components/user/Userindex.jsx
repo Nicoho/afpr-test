@@ -1,34 +1,48 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+
 import Questionnaire from './Questionnnaire';
 import Fin from './Fin'
 import Debut from './Debut';
+import LogoAmiltoneSeul from '../../img/LogoASeul.png'
+import './user-style.scss'
 
 
 
-const User = () => {
+const Userindex = () => {
+  const [page, setPage] = useState(1)
 
+  let handlePageChange = () => {
+    page === 3 ? setPage(1) : setPage(page + 1)
+  }
+
+
+
+  let handleComponent = () => {
+    switch (page) {
+      case 1:
+        return <Debut handlePageChange={handlePageChange} />;
+      case 2:
+        return <Questionnaire handlePageChange={handlePageChange} />;
+      case 3:
+        return <Fin handlePageChange={handlePageChange} />;
+      default:
+        return 'erreur d affichage'
+    }
+  }
 
   return (
     <>
-      <BrowserRouter>
-        <div className="App">
-
-          <Switch>
-            <Route path="/user/test">
-              <Questionnaire />
-            </Route>
-            <Route exact path='/user'>
-              <Debut />
-            </Route>
-            <Route path="/user/end">
-              <Fin />
-            </Route>
-          </Switch>
+      <div className="Userindex container-fluid">
+        <div className='logoAmiltoneSeul'>
+          <img src={LogoAmiltoneSeul} alt='logoAmiltoneSeul' />
         </div>
-      </BrowserRouter>
+        {
+          handleComponent()
+        }
+
+      </div>
     </>
   )
 }
 
-export default User;
+export default Userindex;

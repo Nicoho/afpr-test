@@ -1,22 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import './components/user/user-style.scss';
-import Userindex from './components/user/Userindex'
+import './app-style.scss';
+import Userindex from './components/user/Userindex';
+import LogoAmiltone from './img/LogoAmiltone.svg'
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className="App ">
+      <div className='logoAmiltone'>
+        <img src={LogoAmiltone} alt='logoAmiltone' />
+      </div>
+      <BrowserRouter>
 
         <Switch>
-          <Route path="/user">
+          <Route path="/user/:userId/test/:testId">
             <Userindex />
           </Route>
 
         </Switch>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 

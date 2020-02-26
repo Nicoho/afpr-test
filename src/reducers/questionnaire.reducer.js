@@ -1,6 +1,7 @@
 import test_en_dur from '../constantes/test.constantes'
 import axios from 'axios';
 const initialState = {
+  id: 1,
   test: [],
   question: [],
   answers: [],

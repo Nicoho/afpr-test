@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 
-function Fin() {
+function Fin({ handlePageChange }) {
 
 
   return (
@@ -10,9 +9,7 @@ function Fin() {
       <div>
         Fin du test
       </div>
-      <Link to='/user'>
-        <button>Accueil</button>
-      </Link>
+      <button className="btn btn-outline-primary start-btn" onClick={() => handlePageChange()}>Accueil</button>
     </div>
   )
 }

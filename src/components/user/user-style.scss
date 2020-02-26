@@ -1,5 +1,97 @@
-.App {
-  background-color: #145ac1;
-  color: white;
-  height: 100vh;
+@font-face {
+  font-family: "DS-Digital";
+  font-style: normal;
+  font-weight: 1000;
+  src: url("../../assets/fonts/DS-DIGIB.TTF"); /* IE9 Compat Modes */
+}
+
+.Userindex {
+  background: #fff;
+  margin: 35px auto;
+  height: 80vh;
+  width: 85%;
+
+  .logoAmiltoneSeul {
+    text-align: center;
+  }
+  .logoAmiltoneSeul img {
+    border-radius: 50%;
+    width: 15%;
+    margin-top: -3%;
+  }
+
+  .Debut {
+    .intro-text {
+      margin: 30px auto;
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    .start-btn {
+      border-radius: 0 !important;
+      margin: 100px auto;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+
+      padding: 0 20px;
+      width: 250px;
+      height: 80px;
+      background: #145ac1;
+      font-size: 20px;
+      color: white;
+      transition: all 0.2s ease-in-out;
+      text-align: center;
+      line-height: 80px;
+
+      span {
+        display: inline-block;
+      }
+
+      &:hover {
+        background-color: #ce3089;
+        color: white;
+      }
+    }
+  }
+
+  .Questionnaire {
+    .questionnaire_header {
+      margin: 30px auto;
+      font-size: 20px;
+
+      .questionnaire_progression {
+        margin: auto;
+        text-align: center;
+      }
+
+      .questionnaire_chrono {
+        text-align: center;
+
+        .Chrono {
+          font-family: "DS-Digital";
+          font-size: 30px;
+        }
+        .red {
+          color: red;
+        }
+        .blinking {
+          animation: blinkingText 1s infinite;
+        }
+        @keyframes blinkingText {
+          0% {
+            color: red;
+          }
+
+          50% {
+            color: transparent;
+          }
+          100% {
+            color: red;
+          }
+        }
+      }
+    }
+    .questionnaire_questions {
+      text-align: center;
+    }
+  }
 }
