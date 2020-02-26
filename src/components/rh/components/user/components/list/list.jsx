@@ -1,13 +1,13 @@
 import React from 'react';
-import loupe from "../../../../../img/loupe.svg"
-import send from "../../../../../img/send.png"
-import edit from "../../../../../img/edit.png"
-import del from "../../../../../img/delete.png"
+import loupe from "../../../../../../img/loupe.svg"
+import send from "../../../../../../img/send.png"
+import edit from "../../../../../../img/edit.png"
+import del from "../../../../../../img/delete.png"
 
-
-const ListView = ({ userDetail }) => {
+import "./list.style.scss"
+const List = ({ getHistorique }) => {
     return (
-        <>
+        <div className="register-right">
             <h3 className="register-heading">Liste des candidats</h3>
             <div>
                 <div className="search input-group col-md-4">
@@ -28,7 +28,7 @@ const ListView = ({ userDetail }) => {
                     <tbody>
                         {[0, 1,].map((v, i) => {
                             return (
-                                <tr onClick={() => userDetail(i)} >
+                                <tr onClick={() => getHistorique(i)} >
                                     <td ><p>John</p></td>
                                     <td ><p>Doe</p></td>
                                     <td ><p>johndoe@email.com</p></td>
@@ -51,8 +51,8 @@ const ListView = ({ userDetail }) => {
                     </tbody>
                 </table>
             </div>
-        </>
+        </div>
     )
 }
 
-export default ListView;
+export default List;
