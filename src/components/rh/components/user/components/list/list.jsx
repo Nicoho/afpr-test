@@ -3,7 +3,7 @@ import loupe from "../../../../../../img/loupe.svg"
 import send from "../../../../../../img/send.png"
 import edit from "../../../../../../img/edit.png"
 import del from "../../../../../../img/delete.png"
-
+import data from '../../../../../../data/rh.user.data.json'
 import "./list.style.scss"
 const List = ({ getHistorique }) => {
     return (
@@ -26,16 +26,16 @@ const List = ({ getHistorique }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {[0, 1,].map((v, i) => {
+                        {data.map((v, i) => {
                             return (
-                                <tr onClick={() => getHistorique(i)} >
-                                    <td ><p>John</p></td>
-                                    <td ><p>Doe</p></td>
-                                    <td ><p>johndoe@email.com</p></td>
-                                    <td ><p>React</p></td>
-                                    <td ><p>Junior</p></td>
+                                <tr onClick={() => getHistorique(v)} >
+                                    <td ><p>{v.lastName}</p></td>
+                                    <td ><p>{v.userName}</p></td>
+                                    <td ><p>{v.email}</p></td>
+                                    <td ><p>{v.langage}</p></td>
+                                    <td ><p>{v.niveau}</p></td>
                                     <td >
-                                        <div className="contImg" onClick={() => alert("envoyer")}>
+                                        <div className="contImg" onClick={() => alert("test envoye à " + v.lastName)}>
                                             <img src={send} alt="" width="45px" height="90px" />
                                         </div>
                                         <div className="contImg" onClick={() => alert("editer")}>

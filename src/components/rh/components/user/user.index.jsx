@@ -4,20 +4,20 @@ import Historique from './components/historique/historique';
 import { useState } from 'react';
 
 const UserIndex = () => {
-    let [state, setState] = useState("")
+    let [state, setState] = useState([])
 
     const viewHistorique = (user) => {
-        setState(user)
+        setState([user])
     }
     const getBack = () => {
-        setState("")
+        setState([])
     }
 
     return (
-        state === "" ?
+        state.length === 0 ?
             <List getHistorique={(user) => viewHistorique(user)} />
             :
-            <Historique user={state} getBack={() => getBack()} />
+            <Historique user={state[0]} getBack={() => getBack()} />
     )
 }
 

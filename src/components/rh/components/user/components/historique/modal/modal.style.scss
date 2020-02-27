@@ -1,0 +1,89 @@
+.inModal {
+  background-color: #295bc5;
+  width: 90%;
+  height: 90%;
+  margin: 25px auto;
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+  .header {
+    .title {
+      text-align: center;
+      font-size: 35px;
+      margin: 5px;
+      font-weight: bold;
+      color: white;
+    }
+    .DetailsInfo {
+      background-color: white;
+      margin: 1px;
+      width: 100%;
+      height: 90px;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+      padding: 5px;
+      font-size: 25px;
+      color: black;
+      text-align: left;
+      line-height: 80px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+  .Body {
+    height: 80%;
+    overflow-y: auto;
+
+    .QuestionReponse {
+      margin-top: 25px;
+      width: 100%;
+      padding: 10px;
+      font-size: 25px;
+      text-align: center;
+      background-color: #ededed;
+      .Question {
+        font-weight: bold;
+        font-size: 25px;
+        margin: 15px auto;
+        text-align: left;
+      }
+      .Solution {
+        font-size: 25px;
+        margin: 15px auto;
+        list-style: none;
+        .correct {
+          color: green;
+        }
+        .incorrect {
+          color: red;
+        }
+      }
+    }
+  }
+  .Footer {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    .btn {
+      border-radius: 0 !important;
+      width: 10%;
+      font-size: 25px;
+      &:hover {
+        background-color: #ce3089;
+        color: white;
+      }
+    }
+    .closeModal {
+      transition: all 0.2s ease-in-out;
+      color: #f8f9fa;
+      background-color: red;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+    }
+    .print {
+      transition: all 0.2s ease-in-out;
+      color: #295bc5;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+      background-color: #f8f9fa;
+    }
+  }
+}

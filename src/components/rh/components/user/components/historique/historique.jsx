@@ -1,14 +1,26 @@
 import React from 'react';
 import "./historique.style.scss"
 import { useState } from 'react';
-import Modal from './modal';
+import Modal from './modal/modal';
+
+import testUser from "../../../../../../data/rh.user.test.json"
+import { useEffect } from 'react';
+
 const Historique = ({ user, getBack }) => {
     let [state, setState] = useState({
-        isVisibel: false
+        isVisibel: false,
+        userTest: [],
+        details: []
     })
 
-    const openModal = () => {
-        setState({ ...state, isVisibel: !state.isVisibel })
+    useEffect(() => {
+        const temp = testUser.filter(id => id.id === user.id)
+
+        setState({ ...state, userTest: temp[0].test })
+    }, [])
+
+    const openModal = (value) => {
+        setState({ ...state, isVisibel: !state.isVisibel, details: value })
     }
 
     return (
@@ -18,18 +30,22 @@ const Historique = ({ user, getBack }) => {
                     <div className="btn" onClick={() => getBack()}>
                         <span> Retour </span>
                     </div>
-                    <span className="Nom">Nom : Joe </span>
-                    <span className="Prenom">Prénom : TESTESTEST</span>
-                    <span className="Email">E-mail :  TAMAMMEMEMEM</span>
+                    <span className="Nom">Nom : {user.lastName} </span>
+                    <span className="Prenom">Prénom :  {user.userName}</span>
+                    <span className="Email">E-mail : {user.email}</span>
                 </div>
-
-                <div className="infoTest" onClick={() => openModal()}>
-                    <span>Dernier test: </span>
-                    <span> React</span>
-                    <span> Junior</span>
-                    <span> 50%</span>
-                    <span >12/04/2019</span>
-                </div>
+                {state.userTest.map((value, index) => {
+                    if (index === state.userTest.length - 1) {
+                        return (<div className="infoTest" onClick={() => openModal(value)}>
+                            <span>Dernier test: </span>
+                            <span> {value.langage}</span>
+                            <span> {value.niveau}</span>
+                            <span> 50%</span>
+                            <span >{value.date}</span>
+                        </div>)
+                    }
+                })
+                }
 
                 <table className="table">
                     <thead>
@@ -41,20 +57,22 @@ const Historique = ({ user, getBack }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {[0, 1,].map((v, i) => {
-                            return (
-                                <tr onClick={() => openModal()} >
-                                    <td >React</td>
-                                    <td >Junior</td>
-                                    <td>25%</td>
-                                    <td>12/05/2016</td>
-                                </tr>
-                            )
-                        })}
+                        {state.userTest.map((value, index) => {
+                            if (index !== state.userTest.length - 1) {
+                                return (<tr onClick={() => openModal(value)}>
+                                    <td>Dernier test: </td>
+                                    <td> {value.langage}</td>
+                                    <td> {value.niveau}</td>
+                                    <td> 50%</td>
+                                    <td >{value.date}</td>
+                                </tr>)
+                            }
+                        })
+                        }
                     </tbody>
                 </table>
             </div>
-            <Modal isVisibel={state.isVisibel} openModal={() => openModal()} />
+            <Modal isVisibel={state.isVisibel} testDetails={state.details} openModal={() => openModal()} />
         </div>
     )
 }
