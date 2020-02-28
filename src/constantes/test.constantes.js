@@ -1,6 +1,12 @@
 const test_en_dur = {
+  id_user: 1,
+  nom: 'Caillaud',
+  prenom: 'Tom',
   id_test: 1,
+  langage: 'React',
   test_level: "débutant",
+  duree: 3000000,
+  isEnded: true,
   questions: [
     {
       id_question: 1,
@@ -31,53 +37,48 @@ const test_en_dur = {
       id_question: 3,
       type: 'simple',
       time: 90000,
-      question: '1+1+1=',
+      question: 'Qui est le meilleur jouer de babyfoot de l\'agence?',
       possibilite: [{
         id_possibilite: 2,
-        possibilite: 3,
+        possibilite: 'Ghena',
       }, {
         id_possibilite: 3,
-        possibilite: 2,
+        possibilite: 'Baudoin',
       }, {
         id_possibilite: 4,
-        possibilite: 8,
+        possibilite: 'Leo',
+      }, {
+        id_possibilite: 5,
+        possibilite: 'Antho',
       }
       ]
     }, {
       id_question: 4,
       type: 'simple',
-      question: '1+1111=',
+      question: 'Le mec qui a goûté des huîtres pour la première fois, à quel moment il s\'est dit qu\'il allait ouvrir un truc qui ressemble à un caillou puis manger la substance visqueuse à l\'intérieur ?',
       time: 45000,
       possibilite: [{
         id_possibilite: 2,
-        possibilite: 3,
+        possibilite: 'hier',
       }, {
         id_possibilite: 3,
-        possibilite: 2,
+        possibilite: 'demain',
       }, {
         id_possibilite: 4,
-        possibilite: 8,
+        possibilite: 'jamais mais cette question est vraiment naze',
       }
       ]
     }, {
       id_question: 5,
       type: 'libre',
-      time: 5000,
-      question: 'quelle est la derniere lettre de l\'alphabet?',
+      time: 15000,
+      question: 'Vous avez une montagne d’argent aussi haute que l’Empire State Building. Pouvez-vous tout mettre dans une pièce ?',
       possibilite: {
         id_possibilite: 1,
         possibilite: 'a',
       }
     }
   ]
-}
-export const infos_test = {
-  id: 1,
-  nom: 'Cailllaud',
-  prenom: 'Tom',
-  langage: 'React',
-  niveau: 'débutant',
-  duree: 3000000
 }
 
 

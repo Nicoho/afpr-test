@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 
 
-function Chrono({ ValidateResponse, timer }) {
+function Chrono({ ValidateResponse, timer, setVisible }) {
   const [chrono, setChrono] = useState('')
   const savedCallback = useRef();
 
@@ -27,7 +27,7 @@ function Chrono({ ValidateResponse, timer }) {
     if (chrono > 0) {
       setChrono(chrono - 1000)
     } else {
-      ValidateResponse(e, '')
+      ValidateResponse(e, '', true)
     }
   }
 

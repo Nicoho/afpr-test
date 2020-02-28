@@ -1,0 +1,40 @@
+.TimeOutModal {
+  display: block;
+  position: relative;
+  bottom: 400px;
+  left: 300px;
+  width: 50%;
+  height: 150px;
+  border: 2px solid #145ac1;
+  background-color: #ededed;
+  text-align: center;
+  padding-top: 20px;
+
+  .btnModal {
+    border-radius: 0 !important;
+    margin: 100px auto;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+
+    padding: 0 20px;
+    width: 250px;
+    height: 80px;
+    background: #145ac1;
+    font-size: 20px;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    line-height: 80px;
+
+    span {
+      display: inline-block;
+    }
+
+    &:hover {
+      background-color: #ce3089;
+      color: white;
+    }
+  }
+}
+.cache {
+  display: none;
+}

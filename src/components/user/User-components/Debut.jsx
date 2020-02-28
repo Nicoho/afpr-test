@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { infos_test } from '../../constantes/test.constantes'
+import React from 'react';
 
 
 
-function Debut({ handlePageChange }) {
-  const [infosTest, setInfosTest] = useState('')
 
-  useEffect(() => {
-    setInfosTest(infos_test)
+function Debut({ handlePageChange, test }) {
 
-  }, [])
-  let info = useParams()
-  console.log(info)
 
-  const { nom, prenom, langage, niveau, duree } = infosTest
+  const { nom, prenom, langage, niveau, duree } = test
   return (
     <div className='Debut'>
       <div className='intro-text'>
@@ -26,7 +18,9 @@ function Debut({ handlePageChange }) {
           </p>
         <p>
           Assurez vous d'avoir le temps nécessaire devant vous pour le réaliser dans de bonnes conditions.
-
+        </p>
+        <p>
+          Pensez à valider vos réponses, les reponses non validées ne seront pas prises en compte.
         </p>
         <div className="start-btn" onClick={() => handlePageChange()}>
           <span>

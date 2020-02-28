@@ -1,8 +1,15 @@
 import test_en_dur from '../constantes/test.constantes'
 import axios from 'axios';
 const initialState = {
-  id: 1,
-  test: [],
+  id_user: "",
+  nom: "",
+  prenom: '',
+  langage: '',
+  id_test: 1,
+  questions: [],
+  test_level: '',
+  duree: '',
+  isEnded: false,
   question: [],
   answers: [],
   indexQuestion: 0,
@@ -14,7 +21,7 @@ const initialState = {
 const questionnaire = (state, action) => {
   switch (action.type) {
     case ('getQuestionnaire'):
-      return { ...state, test: test_en_dur, timer: test_en_dur.questions[0].time };
+      return { ...state, ...test_en_dur, questions: test_en_dur.questions, timer: test_en_dur.questions[0].time };
     case ('getAnswer'):
       let answersTemp = [...state.answers]
       answersTemp.push(action.payload)
@@ -28,7 +35,10 @@ const questionnaire = (state, action) => {
     case ('apiCallSucess'):
       return { ...state, loading: action.payload };
     case ('apiCallError'):
-      return { ...state, error: action.payload }
+      return { ...state, error: action.payload };
+    case ('endTest'):
+      return { ...state, isEnded: true };
+
     default:
       return state
   }

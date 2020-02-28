@@ -1,15 +1,17 @@
 import React from 'react';
 
 
+
 function Fin({ handlePageChange }) {
+
 
 
   return (
     <div className='Fin'>
-      <div>
-        Fin du test
+      <div className='fin-texte'>
+        <p>  Vous venez de terminer Le test.</p>
+        <p> Vous recevrez prochainement le résultat par mail. </p>
       </div>
-      <button className="btn btn-outline-primary start-btn" onClick={() => handlePageChange()}>Accueil</button>
     </div>
   )
 }
