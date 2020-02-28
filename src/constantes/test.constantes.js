@@ -6,7 +6,7 @@ const test_en_dur = {
   langage: 'React',
   test_level: "débutant",
   duree: 3000000,
-  isEnded: true,
+  isEnded: false,
   questions: [
     {
       id_question: 1,

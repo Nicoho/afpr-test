@@ -21,7 +21,13 @@ const Userindex = () => {
   }, [])
 
   useEffect(() => {
-    if (state.isEnded) { console.log('fin', state) }
+    let postItem = {
+      id_user: state.id_user,
+      id_tes: state.id_test,
+      answers: state.answers,
+      isEnded: true
+    }
+    if (state.isEnded) { console.log('fin', postItem) }
   }, [state.isEnded, state])
 
   let handlePageChange = () => {
