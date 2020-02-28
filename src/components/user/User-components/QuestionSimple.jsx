@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { setCheckedPossibilities } from '../../reducers/questionnaire.reducer';
+import { setCheckedPossibilities } from '../../../reducers/questionnaire.reducer';
 
 function QuestionSimple({ question, ValidateResponse }) {
   const [Answers, setAnswers] = useState([])
@@ -22,22 +22,27 @@ function QuestionSimple({ question, ValidateResponse }) {
 
   return (
     <div className='QuestionSimple'>
-      <form onSubmit={(e) => ValidateResponse(e, getResult(Answers))}>
-        <div>
+      <form >
+        <div className='reponses'>
           {
             Answers.map((answer, ind) => {
               return (
                 <div key={answer.id_possibilite}>
-                  <label>
-                    <input type='checkbox' value={answer.possibilite} onChange={() => getChecked(ind)} />
-                    {answer.possibilite}
+                  <label className='answer_label'>
+                    <input type='checkbox' className="answer_input" value={answer.possibilite} onChange={() => getChecked(ind)} />
+                    <span className='answer_texte'>{answer.possibilite}</span>
                   </label>
                 </div>
               )
             })
           }
         </div>
-        <button type='submit'>valider la réponse</button>
+
+        <div className="answer-btn" onClick={(e) => ValidateResponse(e, getResult(Answers), false)}>
+          <span>
+            valider la réponse
+          </span>
+        </div>
       </form>
     </div>
   )
