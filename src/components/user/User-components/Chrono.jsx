@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 
 
-function Chrono({ ValidateResponse, timer }) {
+function Chrono({ ValidateResponse, timer, setVisible }) {
   const [chrono, setChrono] = useState('')
   const savedCallback = useRef();
 
@@ -23,16 +23,29 @@ function Chrono({ ValidateResponse, timer }) {
     savedCallback.current = callback
   })
 
-  function callback() {
+  function callback(e) {
     if (chrono > 0) {
       setChrono(chrono - 1000)
     } else {
-      ValidateResponse('', true)
+      ValidateResponse(e, '', true)
     }
   }
 
+  function setTimeColor() {
+    if (Math.floor(chrono / 60000) < 1) {
+      if (chrono % 60000 / 1000 < 10) {
+        return 'blinking'
+      } else if (chrono % 60000 / 1000 < 30) {
+        return "red"
+      } else {
+        return ""
+      }
+    }
+  }
+
+
   return (
-    <div className='Chrono'>
+    <div className={`Chrono ${setTimeColor()}`} >
       {Math.floor(chrono / 60000).toString().replace(/^(\d)$/, '0$1')} : {(chrono % 60000 / 1000).toString().replace(/^(\d)$/, '0$1')}
     </div>
   )
